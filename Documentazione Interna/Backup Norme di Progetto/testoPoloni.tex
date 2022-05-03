@@ -1,0 +1,163 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{Testo}
+\author{alessandro.poloni }
+\date{March 2022}
+
+\begin{document}
+
+\maketitle
+
+\section{Processi di supporto}
+\subsection{Documentazione}
+\subsection{Template}
+I componenti del gruppo hanno implementato un template in linguaggio \LaTeX, al fine di standardizzare la stesura dei documenti, rendendola allo stesso tempo anche più rapida. Il template è costituito dalle parti di seguito descritte.
+\subsubsection{Prima pagina}
+La prima pagina di ogni documento contiene:
+\begin{itemize}
+    \item Logo del gruppo al centro della pagina;
+    \item Titolo e versione del documento;
+    \item Nominativi dei componenti del gruppo;
+    \item Indirizzo della repository di GitHub.
+\end{itemize}
+\subsubsection{Indice}
+L'indice riporta sezioni e sottosezioni in cui il documento è organizzato, con il corrispondente numero di pagina.
+\subsubsection{Registro delle modifiche}
+Ogni documento prodotto dal gruppo contiene, a partire dalla seconda pagina, una tabella contenente il registro delle modifiche apportate a tale documento. Per ogni modifica vengono specificati:
+\begin{itemize}
+    \item Versione del documento;
+    \item Data in cui è stata effettuata la modifica;
+    \item Nominativo del componente del gruppo che ha effettuato la modifica;
+    \item Ruolo del componenente del gruppo che ha effettuato la modifica;
+    \item Descrizione sintetica delle modifiche apportate.
+\end{itemize}
+\subsubsection{Struttura delle pagine}
+Ogni pagina del documento è strutturata come segue:
+\begin{itemize}
+    \item In alto a sinistra è presente il logo del gruppo Oberon;
+    \item In alto a destra sono presenti titolo e nome del documento;
+    \item In basso al centro è riportato il numero della pagina;
+    \item Il contenuto della pagina è riportato tra l'intestazione ed il piè di pagina ed è delimitato da due righe.
+\end{itemize}
+\subsubsection{Verbali}
+I verbali si distinguono dagli altri documenti per l'assenza del registro delle modifiche, poichè una volta approvato esso non potrà più essere modificato. Al posto di questo elemento è presente invece una sezione che specifica:
+\begin{itemize}
+    \item Luogo della riunione;
+    \item Data della riunione;
+    \item Durata dell'incontro;
+    \item Partecipanti all'incontro, sia componenti interni del gruppo che componenti esterni come il proponente;
+    \item Autore del documento;
+    \item Verificatore del documento.
+\end{itemize}
+A questa segue la sezione \textbf{Informazioni generali} in cui si descrivono sinteticamente i motivi dell'incontro ed i temi trattati. Per ogni tema rilevante è inoltre prevista una specifica sezione in cui esso viene descritto in modo più preciso.
+
+\subsection{Convenzioni}
+\subsubsection{Data}
+I componenti del gruppo utilizzano il seguente formato per la rappresentazione delle date:
+\begin{center}
+    \textbf{YYYY-MM-DD}
+\end{center}
+ dove \textbf{YYYY} specifica l'anno, \textbf{MM} il mese e \textbf{DD} il giorno.
+
+\subsection{Verifica}
+\subsubsection{Scopo}
+Obiettivo del processo di verifica è di garantire che all'interno della documentazione e del codice sorgente del progetto non vi siano errori. Tale verifica viene eseguita tramite processi di analisi e test che vengono descritti in seguito.
+\subsubsection{Aspettative}
+\begin{itemize}
+    \item Verificare ogni fase, rispettando precisi e validi criteri;
+    \item Verificare in modo corretto per ottenere successo in fase di validazione;
+    \item Rispettare gli obiettivi di copertura individuati nel \textit{Piano di Qualifica};
+    \item Automatizzare, se possibile, le attività del processo.
+\end{itemize}
+\subsubsection{Descrizione}
+Nel processo di verifica è possibile distinguere due tipi di attività principali:
+\begin{itemize}
+    \item \textbf{Analisi statica}: può essere svolta sia sulla documentazione che sul codice sorgente, poichè non ne richiede l'esecuzione. Valuta la conformità alle convenzioni del gruppo e agli standard stabiliti;
+    \item \textbf{Analisi dinamica}: può essere svolta solamente sul codice sorgente, poichè è richiesta l'esecuzione dell'oggeto da verificare. Assicura che ogni unità del codice, individualmente e nel complesso, funzioni in modo atteso, tramite una serie di test. 
+\end{itemize}
+\subsection{Verifica della documentazione}
+La verifica della documentazione consiste in un insieme di attività di analisi statica. Questa verifica può essere svolta manualmente oppure tramite strumenti automatici. Nel primo caso sono possibili due diverse modalità di verifica:
+\begin{itemize}
+    \item \textbf{Walkthrough}: il verificatore esegue un controllo di tutto il documento alla ricerca di errori;
+    \item \textbf{Inspection}: il verificatore ricerca eventuali errori solamente all'interno di una ristretta porzione del documento.
+\end{itemize}
+\subsection{Verifica del codice}
+La verifica del codice prevede attività sia di analisi statica che di analisi dinamica:
+\begin{itemize}
+    \item \textbf{Analisi statica}: programmatori e verificatori controllano che il codice in esame sia stato prodotto rispettato i principi di buona programmazione individuati dal gruppo;
+    \item \textbf{Analisi dinamica}: programmatori e verificatori eseguono il codice alla ricerca di eventuali errori e bug.
+\end{itemize}
+\subsection{Test}
+L'attività di test consente al programmatore di individuare errori o bug a run-time. I test devono essere quanto più possibile automatizzati, poichè la loro esecuzione deve essere ripetibile.
+\subsubsection{Classificazione dei test}
+Ogni test è identificato rispettando la seguente notazione:
+\begin{center}
+    \textbf{T[Tipologia test][Importanza requisito][ID]}
+\end{center}
+Ogni campo ha il significato di seguito descritto:
+\begin{itemize}
+    \item \textbf{Tipologia test}: identifica il tipo di test, può assumere i seguenti valori: 
+        \begin{itemize}
+            \item \textbf{U}: unità;
+            \item \textbf{I}: integrazione;
+            \item \textbf{S}: sistema;
+            \item \textbf{A}: accettazione;
+            \item \textbf{R}: regressione.
+        \end{itemize}
+    \item \textbf{Importanza requisito}: se il campo è assente, il test viene utilizzato per verificare un requisito obbligatorio, altrimenti può assumere i valori \textbf{D} (requisito desiderevole) oppure \textbf{O} (requisito opzionale).
+    \item \textbf{ID}: codice numerico crescente a partire da 1, consente di distinguere test dello stesso tipo.
+\end{itemize}
+
+
+\section{Ruoli di progetto}
+Al fine di comprendere in pieno le differenze tra i diversi ruoli di progetto, a rotazione, i componenti del gruppo ricoprono ruoli diversi. Segue una descrizione di tali ruoli.
+
+\subsection{Responsabile di progetto}
+Il responsabile di progetto assicura che le attività pianificate vengano portate a termine nei tempi stabiliti e rispettando il Way of Working del gruppo. Egli inoltre gestisce la comunicazione con il proponente ed il committente. Altri compiti che lo interessano sono:
+\begin{itemize}
+    \item Assegnazione delle attività ai componenti del gruppo;
+    \item Analisi e correzione dei processi interni al gruppo;
+    \item Prevenzione dei rischi;
+    \item Approvazione della documentazione.
+\end{itemize}
+
+\subsection{Amministratore di progetto}
+L'amministratore di progetto gestisce l'ambiente di lavoro ed i relativi strumenti utilizzati dai componenti del gruppo. Le attività che lo interessano sono:
+\begin{itemize}
+    \item Gestione versionamento ed archiviazione della documentazione;
+    \item Gestione versionamento ed archiviazione del codice sorgente;
+    \item Controllo dell'efficienza degli strumenti di lavoro;
+    \item Redazione del documento \textit{Norme di Progetto}.
+\end{itemize}
+
+\subsection{Analista}
+L'analista ha il compito di determinare i requisiti del progetto. In particolare, egli deve:
+\begin{itemize}
+    \item Analizzare il dominio del problema;
+    \item Individuare i requisiti obbligatori e desiderabili;
+    \item Redigere il documento \textit{Analisi dei Requisiti}.
+\end{itemize}
+
+\subsection{Progettista}
+Il progettista gestisce l'insieme di tecniche e tecnologie del progetto, seguendone ogni fase di sviluppo. I suoi compiti consistono sono:
+\begin{itemize}
+    \item Individuare un'architettura opportuna alla realizzazione del prodotto;
+    \item Garantire il soddisfacimento dei requisiti individuati dagli analisti.
+\end{itemize}
+
+\subsection{Programmatore}
+Il programmatore realizza il codice necessario allo sviluppo del progetto, facendo particolare attenzione a rispettare le specifiche individuate dal progettista. Responsabilità del programmatore sono:
+\begin{itemize}
+    \item Produrre codice quanto più possibile manutenibile;
+    \item Documentare in maniera appropriata il suddetto codice.
+\end{itemize}
+
+\subsection{Verificatore}
+Il verificatore è un ruolo presente in ogni istante del progetto ed ha le seguenti responsabilità:
+\begin{itemize}
+    \item Controllare che ogni artefatto prodotto dal gruppo  rispetti quanto stabilito dal documento \textit{Norme di Progetto}
+    \item Segnalare eventuali errori all'autore dell'artefatto al fine di correggerli.
+\end{itemize}
+
+\end{document}

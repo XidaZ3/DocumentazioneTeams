@@ -1,0 +1,31 @@
+\documentclass[a4paper]{article}
+
+% Impostare titolo
+\newcommand{\doctitle}{Norme di Progetto v 1.0.0}
+
+% Import dei packages e impaginazione
+\input{import.tex}
+
+\makeindex
+
+\begin{document}    
+    
+    % Frontespizio
+	\input{frontespizio.tex}
+	\pagebreak	
+
+    % Indice
+	\tableofcontents	
+	\pagebreak
+	
+	\input{modifiche.tex}
+    \pagebreak
+	% Prima sezione
+	\input{introduzione}
+	\pagebreak
+	\input{processiPrimari}
+	\pagebreak
+	\input{processiDiSupporto}
+	\pagebreak
+    \input{processiOrganizzativi}
+\end{document}
