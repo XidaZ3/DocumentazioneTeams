@@ -1,7 +1,0 @@
-Scaletta Fine Scrum
--controllare Jira
--fare confronto con obiettivi prefissati
--discutere problematiche
--aggiornamento repo
--definire obiettivi scrum succ
--assegnare ruoli nuovi
